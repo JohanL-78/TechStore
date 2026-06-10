@@ -104,7 +104,7 @@ export default async function ShopPage() {
            
 
               <SmoothReveal direction="up" delay={0.2}>
-                <h1 className="text-[clamp(4rem,12vw,12rem)] font-black leading-[0.85] tracking-tighter mb-8 max-w-5xl">
+                <h1 className="text-[clamp(4rem,10.5vw,10.5rem)] font-black leading-[0.85] tracking-tighter mb-8 max-w-5xl">
                   <SplitText
                     type="chars"
                     animation="fadeUp"
