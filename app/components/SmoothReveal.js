@@ -11,6 +11,7 @@ export default function SmoothReveal({
   direction = 'up',
   duration = 1.2,
   delay = 0,
+  animateOnMount = false,
   className = ''
 }) {
   const containerRef = useRef(null);
@@ -30,19 +31,29 @@ export default function SmoothReveal({
       ...directions[direction]
     });
 
+    const reveal = () => {
+      gsap.to(container, {
+        opacity: 1,
+        x: 0,
+        y: 0,
+        duration: duration,
+        delay: delay,
+        ease: 'power3.out'
+      });
+    };
+
+    if (animateOnMount) {
+      reveal();
+
+      return () => {
+        gsap.killTweensOf(container);
+      };
+    }
+
     ScrollTrigger.create({
       trigger: container,
       start: 'top 85%',
-      onEnter: () => {
-        gsap.to(container, {
-          opacity: 1,
-          x: 0,
-          y: 0,
-          duration: duration,
-          delay: delay,
-          ease: 'power3.out'
-        });
-      }
+      onEnter: reveal
     });
 
     return () => {
@@ -50,7 +61,7 @@ export default function SmoothReveal({
         if (trigger.vars.trigger === container) trigger.kill();
       });
     };
-  }, [direction, duration, delay]);
+  }, [direction, duration, delay, animateOnMount]);
 
   return (
     <div ref={containerRef} className={className}>

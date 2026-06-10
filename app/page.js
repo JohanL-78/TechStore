@@ -88,7 +88,7 @@ export default async function ShopPage() {
         {/* Hero Section */}
         <section className="relative h-screen overflow-hidden">
           <ImageParallaxZoom
-            src="https://images.unsplash.com/photo-1713350472357-704e65809226?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=2070"
+            src="https://images.unsplash.com/photo-1591711584791-455de896b1e9?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
             height="100vh"
             zoomIntensity={1.2}
           />
@@ -100,7 +100,7 @@ export default async function ShopPage() {
           <div className="absolute bottom-1/4 left-1/4 w-96 h-96 bg-[#D97706]/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
 
           <div className="absolute inset-0 flex items-center px-6 md:px-12">
-            <div className="relative z-10 max-w-7xl mx-auto w-full">
+            <div className="relative z-10 max-w-7xl mx-auto w-full translate-y-10 md:translate-y-16">
            
 
               <SmoothReveal direction="up" delay={0.2}>
@@ -126,13 +126,13 @@ export default async function ShopPage() {
               </SmoothReveal>
 
               <SmoothReveal direction="up" delay={0.4}>
-                <p className="text-[clamp(1.1rem,2vw,1.5rem)] text-[#ccc] max-w-2xl leading-relaxed font-light tracking-tight mb-12">
+                <p className="text-[clamp(1.1rem,2vw,1.5rem)] text-[#e5e5e5] max-w-2xl leading-relaxed font-light tracking-tight mb-12">
                   Découvrez notre sélection de tablettes, montres connectées
                   et laptops. La technologie accessible en un clic.
                 </p>
               </SmoothReveal>
 
-              <SmoothReveal direction="up" delay={0.6}>
+              <SmoothReveal direction="up" delay={0.6} animateOnMount>
                 <div className="flex gap-6 items-center flex-wrap">
                   <Link href="/products">
                     <button className="px-8 py-4 bg-[#F59E0B] hover:bg-[#D97706] text-black text-sm font-medium tracking-wide uppercase transition-all duration-300">
@@ -147,31 +147,25 @@ export default async function ShopPage() {
                 </div>
               </SmoothReveal>
 
-              <SmoothReveal direction="up" delay={0.8}>
+              <SmoothReveal direction="up" delay={0.8} animateOnMount>
                 <div className="mt-20 flex gap-12 items-center">
                   <div>
                     <div className="text-4xl font-bold text-[#F59E0B] mb-1">300+</div>
-                    <div className="text-sm text-[#b3b3b3] uppercase tracking-wide">Produits Tech</div>
+                    <div className="text-sm text-[#d6d6d6] uppercase tracking-wide">Produits Tech</div>
                   </div>
-                  <div className="h-12 w-[1px] bg-white/20" />
+                  <div className="h-12 w-[1px] bg-white/30" />
                   <div>
                     <div className="text-4xl font-bold text-[#F59E0B] mb-1">25k+</div>
-                    <div className="text-sm text-[#b3b3b3] uppercase tracking-wide">Clients Satisfaits</div>
+                    <div className="text-sm text-[#d6d6d6] uppercase tracking-wide">Clients Satisfaits</div>
                   </div>
-                  <div className="h-12 w-[1px] bg-white/20" />
+                  <div className="h-12 w-[1px] bg-white/30" />
                   <div>
                     <div className="text-4xl font-bold text-[#F59E0B] mb-1">24/7</div>
-                    <div className="text-sm text-[#b3b3b3] uppercase tracking-wide">Support</div>
+                    <div className="text-sm text-[#d6d6d6] uppercase tracking-wide">Support</div>
                   </div>
                 </div>
               </SmoothReveal>
             </div>
-          </div>
-
-          {/* Scroll indicator */}
-          <div className="absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-3">
-            <span className="text-xs text-[#b3b3b3] uppercase tracking-widest">Scroll</span>
-            <div className="h-12 w-[1px] bg-gradient-to-b from-[#F59E0B] to-transparent animate-pulse" />
           </div>
         </section>
 
